@@ -444,13 +444,19 @@ footer {
 @media (max-width: 480px) {
   .overlay-title {
     font-size: 1.5rem;
+    bottom: 3rem;
+    left: 1rem;
+    text-align: left;
   }
-
   
 
   #header-tag {
-    font-size: 0.9rem;
-    padding: 5px 10px;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    bottom: 15%;
+    left: 5%;
+    max-width: fit-content;
+    white-space: nowrap;
   }
 
   nav a {
