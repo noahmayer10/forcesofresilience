@@ -361,12 +361,13 @@ footer {
 
   .logo {
     position: relative;
-    left: 0;
+    left: 50%;
     margin-bottom: 15px;
     font-size: 1.25rem;
   }
 
   nav ul {
+    display: none;
     flex-direction: column;
     gap: 10px;
     width: 100%;
@@ -442,9 +443,24 @@ footer {
 }
 
 @media (max-width: 480px) {
+
+  .logo {
+    position: relative;
+    left: 50%;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
   .overlay-title {
     font-size: 1.5rem;
-    bottom: 3rem;
+    bottom: 8.5rem;
     left: 1rem;
     text-align: left;
   }
@@ -453,7 +469,7 @@ footer {
   #header-tag {
     font-size: 0.85rem;
     padding: 4px 10px;
-    bottom: 15%;
+    bottom: 30%;
     left: 5%;
     max-width: fit-content;
     white-space: nowrap;
