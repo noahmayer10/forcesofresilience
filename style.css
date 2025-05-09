@@ -1,0 +1,545 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+/* Header Styles */
+header {
+  background-color: #001f3f;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00aaff;
+}
+
+/* Video Header */
+.video-header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay-title {
+  position: absolute;
+  bottom: 3rem;
+  left: 2rem;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+#header-tag {
+  position: absolute;
+  bottom: 15%;
+  left: 2%;
+  background-color: #ff4747;
+  color: white;
+  padding: 8px 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 20px;
+  z-index: 1;
+  transform: rotate(0deg);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+section {
+  padding: 60px 40px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #001f3f;
+}
+
+.video-gallery,
+.short-film-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.video-carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+.video-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 24px;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.video-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.video-card {
+  position: relative;
+  min-width: 633px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 30%;
+}
+
+.video-card .thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.video-card .video-player,
+.video-card video {
+  width: 100%;
+  height: auto;
+  display: none;
+  border-radius: 8px;
+}
+
+.video-card video {
+  display: block;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.new-tag {
+  position:absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+  z-index: 2;
+  animation-play-state: running;
+}
+
+.scroll-btn {
+  background: black;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.short-film-carousel-container {
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.short-film-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 24px;
+  padding: 1rem;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.short-film-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.video-card-small {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 400px;
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-card-small video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.video-card-small h3,
+h3 {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+iframe,
+video {
+  width: 100%;
+  max-width: 480px;
+  height: 270px;
+}
+
+.contact-section {
+  background-color: #0d1b2a;
+  color: #ffffff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-section a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.contact-section a:hover {
+  color: #00b4d8;
+}
+
+.social-links {
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00b4d8;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px;
+  background-color: #001f3f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #00aaff;
+}
+
+footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+/* Existing styles remain unchanged above this line */
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .logo {
+    position: relative;
+    left: 0;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  .video-header {
+    height: 70vh;
+  }
+
+  .overlay-title {
+    font-size: 1.8rem;
+    bottom: 5rem;
+    left: 1rem;
+    text-align: left;
+  }
+  
+
+  #header-tag {
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    bottom: 17%;
+    left: 5%;
+    max-width: fit-content;
+    white-space: nowrap;
+  }
+  
+  
+
+  section {
+    padding: 40px 20px;
+  }
+
+  .video-card,
+  .video-card-small {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .video-carousel,
+  .short-film-carousel {
+    gap: 16px;
+    padding: 0.5rem 0;
+  }
+
+  .video-card h3,
+  .video-card-small h3 {
+    font-size: 1rem;
+  }
+
+  iframe,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  form {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  .social-links a {
+    font-size: 1.5rem;
+  }
+
+  .scroll-btn-left {
+    display: none;
+  }
+  .scroll-btn-right {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+
+  .scroll-btn-left {
+    display: none;
+  }
+  .scroll-btn-right {
+    display: none;
+  }
+
+  .overlay-title {
+    font-size: 1.5rem;
+    bottom: 8rem;
+    left: 1rem;
+    text-align: left;
+  }
+  
+
+  #header-tag {
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    bottom: 17%;
+    left: 5%;
+    max-width: fit-content;
+    white-space: nowrap;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .video-card,
+  .video-card-small {
+    padding: 8px;
+  }
+
+
+  
+}
+
+@media (max-width: 400px) {
+
+  .scroll-btn-left {
+    display: none;
+  }
+  .scroll-btn-right {
+    display: none;
+  }
+
+  #header-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    bottom: 28%; /* not too high, not too low */
+    left: 6%;
+    max-width: 200px;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .overlay-title {
+    font-size: 1.3rem;
+    bottom: 8rem; /* slightly above header-tag */
+    left: 1rem;
+    line-height: 1.3;
+    text-align: left;
+    max-width: 90%;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  .video-card,
+  .video-card-small {
+    padding: 6px;
+  }
+
+  .social-links a {
+    font-size: 1.3rem;
+  }
+
+  form {
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+}
