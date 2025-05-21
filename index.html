@@ -245,33 +245,20 @@ The Voice of Us features inspirational stories and content about Israel and the 
         </div>
       </section>
 
-    <form action="https://formspree.io/f/mqaqjoed" method="POST" style="max-width: 400px; margin: 0 auto; font-size: 0.9em;">
-  <h3 style="text-align: center;">Report an Issue</h3>
+   <form action="https://formspree.io/f/mqaqjoed" method="POST" style="max-width: 100%; width: 320px; margin: 20px auto; font-family: sans-serif; font-size: 14px;">
+  <h4 style="text-align: center; margin-bottom: 10px;">Report an Issue</h4>
 
-  <label for="name">Name</label><br>
-  <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-bottom: 10px;">
+  <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;">
 
-  <label for="email">Email</label><br>
-  <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-bottom: 10px;">
+  <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;">
 
-  <label for="message">What's the issue?</label><br>
-  <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 8px; margin-bottom: 10px;"></textarea>
+  <textarea name="message" placeholder="What's the issue?" rows="3" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
 
-  <button type="submit" style="width: 100%; padding: 10px; background-color: #007BFF; color: white; border: none; cursor: pointer;">
+  <button type="submit" style="width: 100%; padding: 10px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;">
     Submit
   </button>
 </form>
 
-  <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
-    form.addEventListener("submit", () => {
-      setTimeout(() => {
-        alert("Thanks! We'll look into it.");
-      }, 500);
-    });
-  });
-</script>
       
 
   <footer>
