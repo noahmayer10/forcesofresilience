@@ -243,7 +243,7 @@ The Voice of Us features inspirational stories and content about Israel and the 
     <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
 
     <h3 style="font-size: 18px; margin-bottom: 10px;">Report an Issue</h3>
-    <form action="https://formspree.io/f/mqaqjoed" method="POST" style="width: 100%; font-size: 14px; text-align: left;">
+    <form id="issueForm" style="width: 100%; font-size: 14px; text-align: left;">
       <input type="text" name="name" placeholder="Name" required style="width: 100%; padding: 6px 8px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;">
 
       <input type="email" name="email" placeholder="Email" required style="width: 100%; padding: 6px 8px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;">
@@ -254,35 +254,41 @@ The Voice of Us features inspirational stories and content about Israel and the 
         Submit
       </button>
     </form>
+    <p id="form-status" style="margin-top: 10px; color: green;"></p>
   </div>
 </section>
 
-  <script>
-  const form = document.getElementById('issueForm');
+<script>
+  const form = document.getElementById("issueForm");
+  const status = document.getElementById("form-status");
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // prevent page reload
 
     const formData = new FormData(form);
 
     try {
       const res = await fetch("https://formspree.io/f/mqaqjoed", {
         method: "POST",
+        headers: { Accept: "application/json" },
         body: formData,
-        headers: { 'Accept': 'application/json' }
       });
 
       if (res.ok) {
-        form.reset(); // Clears the form
-        // alert("Thanks for reporting the issue!");
+        form.reset(); // 🔥 THIS WILL WORK NOW
+        status.textContent = "Issue submitted successfully!";
+        status.style.color = "green";
       } else {
-        alert("There was an error. Please try again.");
+        status.textContent = "Something went wrong. Try again.";
+        status.style.color = "red";
       }
     } catch (err) {
-      alert("Something went wrong. Try again later.");
+      status.textContent = "Error connecting. Try again later.";
+      status.style.color = "red";
     }
   });
 </script>
+
 
 
       
