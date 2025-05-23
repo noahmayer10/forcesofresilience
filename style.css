@@ -55,21 +55,37 @@ nav a:hover {
 }
 
 /* Video Header */
-.video-container {
-  position: fixed;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* prevents scrolling */
+}
+
+.video-header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.video-bg {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
   z-index: -1;
 }
 
-.video-container iframe {
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
+.video-bg iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   border: none;
+  pointer-events: none;
 }
 
 .header-overlay {
@@ -90,6 +106,7 @@ nav a:hover {
   margin-top: 1rem;
   font-size: 1.2rem;
 }
+
 
 
 
