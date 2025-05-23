@@ -56,25 +56,25 @@ nav a:hover {
 
 /* Video Header */
 .video-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.video-container iframe {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* disables clicks */
-  z-index: 1;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-container iframe {
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  border: none;
 }
 
 .header-overlay {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   text-align: center;
   padding-top: 30vh;
   color: white;
@@ -90,6 +90,7 @@ nav a:hover {
   margin-top: 1rem;
   font-size: 1.2rem;
 }
+
 
 
 .overlay-title {
