@@ -54,6 +54,13 @@ nav a:hover {
   color: #00aaff;
 }
 
+.video-header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .video-background {
   position: absolute;
   top: 0;
@@ -73,6 +80,39 @@ nav a:hover {
   height: 100vh;
   transform: translate(-50%, -50%);
   pointer-events: none;
+}
+
+.header-overlay {
+  position: relative;
+  z-index: 2;
+}
+
+.overlay-title {
+  position: absolute;
+  bottom: 6rem;
+  left: 2rem;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+#header-tag {
+  position: absolute;
+  bottom: 20%;
+  left: 2%;
+  background-color: #ff4747;
+  color: white;
+  padding: 8px 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 
