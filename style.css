@@ -54,10 +54,6 @@ nav a:hover {
   color: #00aaff;
 }
 
-:root {
-  --page-bg-color: #fff; /* Change to your site’s background color */
-}
-
 .video-header {
   position: relative;
   width: 100%;
@@ -65,21 +61,27 @@ nav a:hover {
   overflow: hidden;
 }
 
-.video-header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.video-background iframe {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  object-fit: cover;
 }
 
 .header-overlay {
   position: relative;
+  z-index: 1;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -87,16 +89,17 @@ nav a:hover {
   justify-content: flex-end;
   padding: 2rem;
   box-sizing: border-box;
-  z-index: 1;
 }
 
 .overlay-title {
   color: white;
   font-size: 2.5rem;
   font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   text-decoration: none;
   margin-bottom: 1rem;
+  word-wrap: break-word;
 }
 
 #header-tag {
@@ -110,26 +113,10 @@ nav a:hover {
   width: fit-content;
 }
 
-/* Fade at the bottom of video */
-.fade-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    var(--page-bg-color) 100%
-  );
-  z-index: 2;
-}
-
-/* Mobile responsiveness */
+/* 🔁 Responsive */
 @media (max-width: 768px) {
   .overlay-title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   #header-tag {
@@ -141,6 +128,7 @@ nav a:hover {
     padding: 1rem;
   }
 }
+
 
 
 
