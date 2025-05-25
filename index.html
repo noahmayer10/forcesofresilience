@@ -322,6 +322,33 @@ The Voice of Us features inspirational stories and content about Israel and the 
       window.scrollTo(0, 0);
     });
   </script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousels = document.querySelectorAll(".video-carousel-container");
+
+    carousels.forEach(container => {
+      const carousel = container.querySelector(".video-carousel");
+      const btnLeft = container.querySelector(".scroll-btn-left");
+      const btnRight = container.querySelector(".scroll-btn-right");
+
+      const scrollAmount = () => {
+        // Scroll the width of the container (one card at a time)
+        return carousel.querySelector(".video-card").offsetWidth + 24; // 24 is the gap
+      };
+
+      btnLeft?.addEventListener("click", () => {
+        carousel.scrollBy({ left: -scrollAmount(), behavior: "smooth" });
+      });
+
+      btnRight?.addEventListener("click", () => {
+        carousel.scrollBy({ left: scrollAmount(), behavior: "smooth" });
+      });
+    });
+  });
+</script>
+
+
   
 </body>
 </html>
