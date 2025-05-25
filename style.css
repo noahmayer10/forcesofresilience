@@ -149,14 +149,17 @@
 
 .video-card {
   position: relative;
-  flex: 0 0 100%; /* One card fills the full width */
+  min-width: 633px;
+  flex-shrink: 0;
   scroll-snap-align: start;
   background: #f5f5f5;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   text-align: center;
+  width: 30%;
 }
+
 
 
 .video-card iframe {
