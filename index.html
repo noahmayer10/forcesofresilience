@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="/favicon.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Voice of Us</title>
@@ -88,7 +87,7 @@
   <!-- if the video is new, paste the following code into the <div> " <div id="header-tag">New</div> " -->
   
 
-<section class="video-header">
+  <section class="video-header">
     <video autoplay muted loop playsinline>
       <source src="in_their_honor.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -98,9 +97,6 @@
     <div id="header-tag">Newest Video</div>
     </div>
   </section>
-
-
-
 
   
   
@@ -232,67 +228,36 @@ The Voice of Us features inspirational stories and content about Israel and the 
         <h6>*for better video quality, <a href="https://www.youtube.com/@HillelKornwasser/featured" target="_blank">visit Hillel Kornwasser on youtube</a>*</h6>
       </section>
       
-  <hr style="margin: 25px 0; border: none; border-top: 1px solid #ddd;">
+  
 
-     <section id="contact" class="contact-section" style="padding: 30px; background-color: #f9f9f9; font-family: sans-serif;">
-  <div class="contact-container" style="max-width: 500px; margin: 0 auto; text-align: center; color: #333;">
-    <h2 style="color: #94CDFF; font-size: 28px; margin-bottom: 10px;">Contact</h2>
-    <p>If you’d like to get in touch, feel free to reach out:</p>
+      <section id="contact" class="contact-section">
+        <div class="contact-container">
+          <h2 style="color: #94CDFF;font-size: 30px;">Contact</h2>
+          <p>If you’d like to get in touch, feel free to reach out:</p>
+          <p><strong>Hillel Kornwasser</strong></p>
+          <a href="mailto:hillelkornwasser@gmail.com" target="_blank">Email: hillelkornwasser@gmail.com</a>
+          <br>
+          <a href="https://www.instagram.com/hillelkornwasser/" target="_blank">Instagram: @hillelkornwasser</a>
+          <br>
+          <a href="https://chat.whatsapp.com/KERjabPBaWZ1xGvFMy7ZyK" target="_blank">WhatsApp Group Chat</a>
+          <br>
+          <a href="mailto:noam10mayer@gmail.com" target="_blank">Report an Issue</a>
+        </div>
+      </section>
 
-    <p><strong>Hillel Kornwasser</strong></p>
-    <p><a href="mailto:hillelkornwasser@gmail.com" style="color: #007BFF;">hillelkornwasser@gmail.com</a></p>
-    <p><a href="https://www.instagram.com/hillelkornwasser/" target="_blank" style="color: #007BFF;">Instagram: @hillelkornwasser</a></p>
-    <p><a href="https://chat.whatsapp.com/KERjabPBaWZ1xGvFMy7ZyK" target="_blank" style="color: #007BFF;">Join WhatsApp Group Chat</a></p>
+   <form action="https://formspree.io/f/mqaqjoed" method="POST" style="max-width: 100%; width: 320px; margin: 20px auto; font-family: sans-serif; font-size: 14px;">
+  <h4 style="text-align: center; margin-bottom: 10px;">Report an Issue</h4>
 
-    <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+  <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;">
 
-    <h3 style="font-size: 18px; margin-bottom: 10px;">Report an Issue</h3>
-    <form id="issueForm" style="width: 100%; font-size: 14px; text-align: left;">
-      <input type="text" name="name" placeholder="Name" required style="width: 100%; padding: 6px 8px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;">
-      <input type="email" name="email" placeholder="Email" required style="width: 100%; padding: 6px 8px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;">
-      <textarea name="message" placeholder="What's the issue?" rows="3" required style="width: 100%; padding: 6px 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
-      <button type="submit" style="width: 100%; padding: 8px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
-    </form>
-    <p id="form-status" style="margin-top: 10px;"></p>
-  </div>
-</section>
+  <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;">
 
-<script>
-  const form = document.getElementById("issueForm");
-  const status = document.getElementById("form-status");
+  <textarea name="message" placeholder="What's the issue?" rows="3" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const data = new FormData(form);
-
-    fetch("https://formspree.io/f/mqaqjoed", {
-      method: "POST",
-      body: data,
-      headers: {
-        Accept: "application/json"
-      }
-    })
-      .then(response => {
-        if (response.ok) {
-          // ✔ Clear inputs manually for 100% success
-          form.querySelectorAll("input, textarea").forEach(field => field.value = "");
-          status.textContent = "Thanks! We'll look into it.";
-          status.style.color = "green";
-        } else {
-          status.textContent = "Something went wrong. Try again.";
-          status.style.color = "red";
-        }
-      })
-      .catch(error => {
-        status.textContent = "Error connecting. Please try again later.";
-        status.style.color = "red";
-      });
-  });
-</script>
-
-
-
+  <button type="submit" style="width: 100%; padding: 10px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;">
+    Submit
+  </button>
+</form>
 
       
 
