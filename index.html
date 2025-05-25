@@ -40,33 +40,34 @@
       });
     });
 
-    // For documentaries carousel scroll buttons
-const docLeftBtn = document.querySelector('.documentaries-left');
-const docRightBtn = document.querySelector('.documentaries-right');
-const docCarousel = document.querySelector('.documentaries-carousel');
+    document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.video-carousel');
+    const leftBtn = document.querySelector('.scroll-btn-left');
+    const rightBtn = document.querySelector('.scroll-btn-right');
+  
+    if (carousel && leftBtn && rightBtn) {
+      leftBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -657, behavior: 'smooth' });
+      });
+  
+      rightBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: 657, behavior: 'smooth' });
+      });
+    } else {
+      console.error("Scroll buttons or carousel not found");
+    }
+  });
 
-docLeftBtn.addEventListener('click', () => {
-  docCarousel.scrollBy({ left: -650, behavior: 'smooth' });
-});
-docRightBtn.addEventListener('click', () => {
-  docCarousel.scrollBy({ left: 650, behavior: 'smooth' });
+  window.addEventListener('load', () => {
+  const carousel = document.querySelector('.video-carousel');
+  carousel.scrollLeft = 0; // Reset scroll position to the first video
 });
 
-// For stories carousel scroll buttons
-const storiesLeftBtn = document.querySelector('.stories-left');
-const storiesRightBtn = document.querySelector('.stories-right');
-const storiesCarousel = document.querySelector('.stories-carousel');
 
-storiesLeftBtn.addEventListener('click', () => {
-  storiesCarousel.scrollBy({ left: -650, behavior: 'smooth' });
-});
-storiesRightBtn.addEventListener('click', () => {
-  storiesCarousel.scrollBy({ left: 650, behavior: 'smooth' });
-});
-
+  </script>
 
   
-  </script>
+
   
 
   
@@ -90,7 +91,7 @@ storiesRightBtn.addEventListener('click', () => {
 
   <section class="video-header">
     <video autoplay muted loop playsinline>
-      <source src="in_their_honor.mp4" type="video/mp4">
+      <source src="In Their Honor header.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="header-overlay">
@@ -114,62 +115,58 @@ The Voice of Us features inspirational stories and content about Israel and the 
 
 <!-- below is the code for the "NEW" tag on videos -->
 <!-- <div class="new-tag">New</div> -->
-  <section id="documentaries">
-  <h2>Documentaries</h2>
-  <div class="video-gallery documentaries-gallery">
-    <div class="video-carousel-container documentaries-container">
+  <section id="videos">
+    <h2>Films</h2>
+    <div class="video-gallery">
+      <div class="video-carousel-container">
+  
+        <!-- ⬅️ LEFT SCROLL BUTTON -->
+        <button class="scroll-btn-left" aria-label="Scroll Left">&#10094;</button>
+  
+        <!-- 🎥 SCROLLABLE VIDEO CAROUSEL -->
+        <div class="video-carousel">
 
-      <button class="scroll-btn-left documentaries-left" aria-label="Scroll Left">&#10094;</button>
+          <!-- New tag script below -->
+          <!-- <div class="new-tag">New</div> -->
 
-      <div class="video-carousel documentaries-carousel">
-        <div class="video-card">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/6s490ppkQwo?si=NFAwPe4eQmlvY4Dg" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-          <h3>In Their Honor</h3>
+          
+          <div class="video-card">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/6s490ppkQwo?si=NFAwPe4eQmlvY4Dg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             <h3>In Their Honor</h3>
+          </div>
+  
+          <div class="video-card">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LqqytuPRlAk?si=My-DsVtp0V-8RYJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h3>Forces of Resilience</h3>
+          </div>
+  
+          <div class="video-card">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qMyED3h42B0?si=pgToR7yWS4F3NGAp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h3>Surviving the Angel of Death</h3>
+          </div>
+  
+          <div class="video-card">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DsNXCiVK5bs?si=_ZOZCPeYc4J2xAhN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h3>The UNBREAKABLE Rose</h3>
+          </div>
+  
+          <div class="video-card">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XM1tpgQn1_k?si=dNatqln2igxhmKcr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h3>Not In This Alone</h3>
+          </div>
+  
+          <div class="video-card">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QPQUNSj_8vc?si=FOc-73_CqbXkkB5c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h3>A Ladder from Heaven</h3>
+          </div>
         </div>
-        <div class="video-card">
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LqqytuPRlAk?si=My-DsVtp0V-8RYJI" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-          <h3>Forces of Resilience</h3>
-        </div>
+  
+        <!-- ➡️ RIGHT SCROLL BUTTON -->
+        <button class="scroll-btn-right" aria-label="Scroll Right">&#10095;</button>
+  
       </div>
-
-      <button class="scroll-btn-right documentaries-right" aria-label="Scroll Right">&#10095;</button>
-
     </div>
-  </div>
-</section>
-
-<section id="stories">
-  <h2>Stories</h2>
-  <div class="video-gallery stories-gallery">
-    <div class="video-carousel-container stories-container">
-
-      <button class="scroll-btn-left stories-left" aria-label="Scroll Left">&#10094;</button>
-
-      <div class="video-carousel stories-carousel">
-        <div class="video-card">
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qMyED3h42B0?si=pgToR7yWS4F3NGAp" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-          <h3>Surviving the Angel of Death</h3>
-        </div>
-        <div class="video-card">
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DsNXCiVK5bs?si=_ZOZCPeYc4J2xAhN" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-          <h3>The UNBREAKABLE Rose</h3>
-        </div>
-        <div class="video-card">
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XM1tpgQn1_k?si=dNatqln2igxhmKcr" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-          <h3>Not In This Alone</h3>
-        </div>
-        <div class="video-card">
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QPQUNSj_8vc?si=FOc-73_CqbXkkB5c" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-          <h3>A Ladder from Heaven</h3>
-        </div>
-      </div>
-
-      <button class="scroll-btn-right stories-right" aria-label="Scroll Right">&#10095;</button>
-
-    </div>
-  </div>
-</section>
-
+  </section>
   
   
   
@@ -250,58 +247,57 @@ The Voice of Us features inspirational stories and content about Israel and the 
         </div>
       </section>
 
-   <form id="eventForm" style="max-width: 420px; margin: auto;">
-  <h3 style="text-align: center;">Book an Event</h3>
-
-  <input type="text" name="name" placeholder="Your Name" required style="width: 100%; margin: 8px 0; padding: 8px;">
-  <input type="email" name="email" placeholder="Your Email" required style="width: 100%; margin: 8px 0; padding: 8px;">
-  <input type="text" name="eventType" placeholder="Type of Event" required style="width: 100%; margin: 8px 0; padding: 8px;">
-  <input type="date" name="eventDate" required style="width: 100%; margin: 8px 0; padding: 8px;">
-  <textarea name="details" placeholder="More info..." rows="3" style="width: 100%; margin: 8px 0; padding: 8px;"></textarea>
-
-  <button type="submit" style="width: 100%; padding: 10px; background-color: #007BFF; color: white;">Submit</button>
-  <p id="formStatus" style="text-align: center; margin-top: 10px;"></p>
-</form>
-
-<script>
-  const form = document.getElementById("eventForm");
-  const status = document.getElementById("formStatus");
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const eventType = formData.get("eventType");
-    const eventDate = formData.get("eventDate");
-    const details = formData.get("details");
-
-    // Send form to Formspree
-    const response = await fetch("https://formspree.io/f/mqaqjoed", {
-      method: "POST",
-      headers: { Accept: "application/json" },
-      body: formData
-    });
-
-    if (response.ok) {
-      // WhatsApp message setup
-      const waNumber = "16072029954"; // 🔥 Put your WhatsApp number here, no + or dashes
-      const message = `Hey! I'd like to book an event.%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AEvent: ${encodeURIComponent(eventType)}%0ADate: ${encodeURIComponent(eventDate)}%0ADetails: ${encodeURIComponent(details)}`;
-      const waURL = `https://wa.me/${waNumber}?text=${message}`;
-
-      window.open(waURL, "_blank");
-
-      form.reset();
-      status.textContent = "Thanks! Email sent and WhatsApp opened.";
-      status.style.color = "green";
-    } else {
-      status.textContent = "Oops! Something went wrong. Try again.";
-      status.style.color = "red";
-    }
-  });
-</script>
-
+      <form id="eventForm" style="max-width: 420px; margin: auto;">
+        <h3 style="text-align: center;">Book an Event</h3>
+      
+        <input type="text" name="name" placeholder="Your Name" required style="width: 100%; margin: 8px 0; padding: 8px;">
+        <input type="email" name="email" placeholder="Your Email" required style="width: 100%; margin: 8px 0; padding: 8px;">
+        <input type="text" name="eventType" placeholder="Type of Event" required style="width: 100%; margin: 8px 0; padding: 8px;">
+        <input type="date" name="eventDate" required style="width: 100%; margin: 8px 0; padding: 8px;">
+        <textarea name="details" placeholder="More info..." rows="3" style="width: 100%; margin: 8px 0; padding: 8px;"></textarea>
+      
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #007BFF; color: white;">Submit</button>
+        <p id="formStatus" style="text-align: center; margin-top: 10px;"></p>
+      </form>
+      
+      <script>
+        const form = document.getElementById("eventForm");
+        const status = document.getElementById("formStatus");
+      
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+      
+          const formData = new FormData(form);
+          const name = formData.get("name");
+          const email = formData.get("email");
+          const eventType = formData.get("eventType");
+          const eventDate = formData.get("eventDate");
+          const details = formData.get("details");
+      
+          // Send form to Formspree
+          const response = await fetch("https://formspree.io/f/mqaqjoed", {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: formData
+          });
+      
+          if (response.ok) {
+            // WhatsApp message setup
+            const waNumber = "16072029954"; // 🔥 Put your WhatsApp number here, no + or dashes
+            const message = `Hey! I'd like to book an event.%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AEvent: ${encodeURIComponent(eventType)}%0ADate: ${encodeURIComponent(eventDate)}%0ADetails: ${encodeURIComponent(details)}`;
+            const waURL = `https://wa.me/${waNumber}?text=${message}`;
+      
+            window.open(waURL, "_blank");
+      
+            form.reset();
+            status.textContent = "Thanks! Email sent and WhatsApp opened.";
+            status.style.color = "green";
+          } else {
+            status.textContent = "Oops! Something went wrong. Try again.";
+            status.style.color = "red";
+          }
+        });
+      </script>
 
       
 
@@ -316,19 +312,6 @@ The Voice of Us features inspirational stories and content about Israel and the 
       window.scrollTo(0, 0);
     });
   </script>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".carousel-container").forEach((container) => {
-      const carousel = container.querySelector(".video-carousel");
-      const btnLeft = container.querySelector(".scroll-btn.left");
-      const btnRight = container.querySelector(".scroll-btn.right");
-
-      btnLeft?.addEventListener("click", () => {
-        carousel.scrollBy({
-          left: -carousel.clientWidth * 0.8,
-          behavior: "smooth"
-
   
 </body>
 </html>
