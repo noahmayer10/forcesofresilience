@@ -62,11 +62,11 @@ nav a:hover {
 }
 
 .video-background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
@@ -83,7 +83,7 @@ nav a:hover {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -113,7 +113,7 @@ nav a:hover {
   width: fit-content;
 }
 
-/* ✅ Mobile adjustments */
+/* 🔁 Responsive */
 @media (max-width: 768px) {
   .overlay-title {
     font-size: 1.8rem;
@@ -126,9 +126,9 @@ nav a:hover {
 
   .header-overlay {
     padding: 1rem;
-    justify-content: flex-end;
   }
 }
+
 
 
 
