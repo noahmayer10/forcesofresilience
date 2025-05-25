@@ -116,24 +116,24 @@
     color: #001f3f;
   }
   
-  /* COMMON STYLES */
-.video-carousel-container {
+  .carousel-container {
   display: flex;
   align-items: center;
   gap: 10px;
   position: relative;
+  overflow: hidden;
   margin-bottom: 3rem;
 }
 
 .video-carousel {
   display: flex;
   gap: 24px;
-  scroll-snap-type: x mandatory;
   overflow-x: auto;
-  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  padding: 1rem 0;
   flex-wrap: nowrap;
 }
 
@@ -142,17 +142,15 @@
 }
 
 .video-card {
-  position: relative;
-  min-width: 280px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 90vw;
+  max-width: 600px;
   background: #f5f5f5;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  scroll-snap-align: start;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 90vw;
-  max-width: 633px;
 }
 
 .video-card iframe {
@@ -161,47 +159,46 @@
   border-radius: 8px;
 }
 
-/* Scroll Buttons */
-.scroll-btn-left,
-.scroll-btn-right {
-  background-color: rgba(0, 0, 0, 0.6);
+.scroll-btn {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
   border: none;
-  color: white;
   font-size: 2rem;
-  cursor: pointer;
   padding: 0.5rem 1rem;
   border-radius: 50%;
-  user-select: none;
-  transition: background-color 0.3s ease;
-  z-index: 10;
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.3s;
 }
 
-.scroll-btn-left:hover,
-.scroll-btn-right:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 
-.scroll-btn-left {
+.scroll-btn.left {
   position: absolute;
   left: 0;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.scroll-btn-right {
+.scroll-btn.right {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translate(50%, -50%);
 }
 
-/* Documentaries specific styles */
-.documentaries-container {
-  /* customize later if you want */
-}
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .scroll-btn {
+    display: none;
+  }
 
-.documentaries-carousel {
-  /* customize*
+  .video-card iframe {
+    height: 160px;
+  }
+}
 
 
   
