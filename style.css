@@ -195,11 +195,6 @@
     display: none;
   }
 
-  .video-card iframe {
-    min-width: 75vw;
-      width: 75%;
-  }
-}
 
 
   
@@ -376,9 +371,10 @@
     nav ul {
       display: none;
     }
+    .video-card
     .video-card-small {
-      min-width: 90vw;
-      width: 90%;
+      min-width: 85vw;
+      width: 85%;
     }
   
     .overlay-title {
