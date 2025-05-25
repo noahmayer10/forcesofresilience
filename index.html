@@ -46,6 +46,31 @@
       });
     });
 
+
+     // For documentaries carousel scroll buttons
+const docLeftBtn = document.querySelector('.documentaries-left');
+const docRightBtn = document.querySelector('.documentaries-right');
+const docCarousel = document.querySelector('.documentaries-carousel');
+
+docLeftBtn.addEventListener('click', () => {
+  docCarousel.scrollBy({ left: -650, behavior: 'smooth' });
+});
+docRightBtn.addEventListener('click', () => {
+  docCarousel.scrollBy({ left: 650, behavior: 'smooth' });
+});
+
+// For stories carousel scroll buttons
+const storiesLeftBtn = document.querySelector('.stories-left');
+const storiesRightBtn = document.querySelector('.stories-right');
+const storiesCarousel = document.querySelector('.stories-carousel');
+
+storiesLeftBtn.addEventListener('click', () => {
+  storiesCarousel.scrollBy({ left: -650, behavior: 'smooth' });
+});
+storiesRightBtn.addEventListener('click', () => {
+  storiesCarousel.scrollBy({ left: 650, behavior: 'smooth' });
+});
+
   
 
 
