@@ -149,7 +149,7 @@
   
   .video-card {
     position: relative;
-    min-width: 633px;
+    min-width: 640px;
     flex-shrink: 0;
     scroll-snap-align: start;
     background: #f5f5f5;
