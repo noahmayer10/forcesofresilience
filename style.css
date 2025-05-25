@@ -355,8 +355,8 @@
     }
     .video-card,
     .video-card-small {
-      min-width: 60vw;
-      width: 65%;
+      min-width: 75vw;
+      width: 75%;
     }
   
     .overlay-title {
