@@ -40,31 +40,30 @@
       });
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('.video-carousel');
-    const leftBtn = document.querySelector('.scroll-btn-left');
-    const rightBtn = document.querySelector('.scroll-btn-right');
-  
-    if (carousel && leftBtn && rightBtn) {
-      leftBtn.addEventListener('click', () => {
-        carousel.scrollBy({ left: -657, behavior: 'smooth' });
-      });
-  
-      rightBtn.addEventListener('click', () => {
-        carousel.scrollBy({ left: 657, behavior: 'smooth' });
-      });
-    } else {
-      console.error("Scroll buttons or carousel not found");
-    }
-  });
+    // For documentaries carousel scroll buttons
+const docLeftBtn = document.querySelector('.documentaries-left');
+const docRightBtn = document.querySelector('.documentaries-right');
+const docCarousel = document.querySelector('.documentaries-carousel');
 
-  window.addEventListener('load', () => {
-  const carousel = document.querySelector('.video-carousel');
-  carousel.scrollLeft = 0; // Reset scroll position to the first video
+docLeftBtn.addEventListener('click', () => {
+  docCarousel.scrollBy({ left: -650, behavior: 'smooth' });
+});
+docRightBtn.addEventListener('click', () => {
+  docCarousel.scrollBy({ left: 650, behavior: 'smooth' });
 });
 
+// For stories carousel scroll buttons
+const storiesLeftBtn = document.querySelector('.stories-left');
+const storiesRightBtn = document.querySelector('.stories-right');
+const storiesCarousel = document.querySelector('.stories-carousel');
 
-  </script>
+storiesLeftBtn.addEventListener('click', () => {
+  storiesCarousel.scrollBy({ left: -650, behavior: 'smooth' });
+});
+storiesRightBtn.addEventListener('click', () => {
+  storiesCarousel.scrollBy({ left: 650, behavior: 'smooth' });
+});
+
 
   
 
