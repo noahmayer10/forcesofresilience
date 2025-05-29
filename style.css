@@ -243,9 +243,9 @@
   .video-card-small {
     scroll-snap-align: start;
     flex: 0 0 auto;
-    width: 400px;
+    width: 200px;
     background: #f5f5f5;
-    padding: 0px;
+    padding: 10px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
