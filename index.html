@@ -41,28 +41,52 @@
       });
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('.video-carousel');
-    const leftBtn = document.querySelector('.scroll-btn-left');
-    const rightBtn = document.querySelector('.scroll-btn-right');
-  
-    if (carousel && leftBtn && rightBtn) {
-      leftBtn.addEventListener('click', () => {
-        carousel.scrollBy({ left: -657, behavior: 'smooth' });
+  // 📽 Documentary Scroll Logic
+  document.addEventListener('DOMContentLoaded', function () {
+    const docCarousel = document.querySelector('.documentary-carousel');
+    const leftDocBtn = document.querySelector('.scroll-btn-left-doc');
+    const rightDocBtn = document.querySelector('.scroll-btn-right-doc');
+
+    if (docCarousel && leftDocBtn && rightDocBtn) {
+      leftDocBtn.addEventListener('click', () => {
+        docCarousel.scrollBy({ left: -682.5, behavior: 'smooth' });
       });
-  
-      rightBtn.addEventListener('click', () => {
-        carousel.scrollBy({ left: 657, behavior: 'smooth' });
+
+      rightDocBtn.addEventListener('click', () => {
+        docCarousel.scrollBy({ left: 682.5, behavior: 'smooth' });
       });
     } else {
-      console.error("Scroll buttons or carousel not found");
+      console.error("Documentary scroll buttons or carousel not found");
     }
   });
 
+  // 🎭 Story Scroll Logic
+  document.addEventListener('DOMContentLoaded', function () {
+    const storyCarousel = document.querySelector('.story-carousel');
+    const leftStoryBtn = document.querySelector('.scroll-btn-left-story');
+    const rightStoryBtn = document.querySelector('.scroll-btn-right-story');
+
+    if (storyCarousel && leftStoryBtn && rightStoryBtn) {
+      leftStoryBtn.addEventListener('click', () => {
+        storyCarousel.scrollBy({ left: -682.5, behavior: 'smooth' });
+      });
+
+      rightStoryBtn.addEventListener('click', () => {
+        storyCarousel.scrollBy({ left: 682.5, behavior: 'smooth' });
+      });
+    } else {
+      console.error("Story scroll buttons or carousel not found");
+    }
+  });
+
+  // 🧼 Reset scrolls on load
   window.addEventListener('load', () => {
-  const carousel = document.querySelector('.video-carousel');
-  carousel.scrollLeft = 0; // Reset scroll position to the first video
-});
+    const docCarousel = document.querySelector('.documentary-carousel');
+    const storyCarousel = document.querySelector('.story-carousel');
+    if (docCarousel) docCarousel.scrollLeft = 0;
+    if (storyCarousel) storyCarousel.scrollLeft = 0;
+  });
+
 
 
   </script>
@@ -73,7 +97,7 @@
 
   
 </head>
-<body style="scroll-behavior: smooth;">
+<body style="scroll-behavior: smooth;" onload="window.scrollTo(0, 0)">
 
   <header>
     <div class="logo">The Voice of Us</div>
@@ -119,103 +143,56 @@ The Voice of Us features inspirational stories and content about Israel and the 
 
 <!-- below is the code for the "NEW" tag on videos -->
 <!-- <div class="new-tag">New</div> -->
-  <section id="videos">
-  <h2>Films</h2>
-  <div class="video-gallery">
-    <div class="video-carousel-container">
-
-      <!-- ⬅️ LEFT SCROLL BUTTON -->
-      <button class="scroll-btn-left" aria-label="Scroll Left">&#10094;</button>
-
-      <!-- 🎥 SCROLLABLE VIDEO CAROUSEL -->
-      <div class="video-carousel">
-
-        <div class="video-card">
-          <iframe 
-            width="560" height="315" 
-            src="https://www.youtube-nocookie.com/embed/6s490ppkQwo?si=NFAwPe4eQmlvY4Dg" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            sandbox="allow-scripts allow-same-origin allow-popups" 
-            allowfullscreen>
-          </iframe>
-          <h3>In Their Honor</h3>
+  <!-- 🎬 DOCUMENTARIES SECTION -->
+<section id="documentaries">
+    <h2>Documentaries</h2>
+    <div class="documentary-gallery">
+      <div class="documentary-carousel-container">
+        <button class="scroll-btn-left-doc" aria-label="Scroll Left">&#10094;</button>
+        <div class="documentary-carousel">
+          <div class="documentary-card">
+            <iframe src="https://www.youtube-nocookie.com/embed/6s490ppkQwo?si=NFAwPe4eQmlvY4Dg" allowfullscreen></iframe>
+            <h3>In Their Honor</h3>
+          </div>
+          <div class="documentary-card">
+            <iframe src="https://www.youtube-nocookie.com/embed/LqqytuPRlAk?si=My-DsVtp0V-8RYJI" allowfullscreen></iframe>
+            <h3>Forces of Resilience</h3>
+          </div>
         </div>
-
-        <div class="video-card">
-          <iframe 
-            width="560" height="315" 
-            src="https://www.youtube-nocookie.com/embed/LqqytuPRlAk?si=My-DsVtp0V-8RYJI" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            sandbox="allow-scripts allow-same-origin allow-popups" 
-            allowfullscreen>
-          </iframe>
-          <h3>Forces of Resilience</h3>
-        </div>
-
-        <div class="video-card">
-          <iframe 
-            width="560" height="315" 
-            src="https://www.youtube-nocookie.com/embed/qMyED3h42B0?si=pgToR7yWS4F3NGAp" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            sandbox="allow-scripts allow-same-origin allow-popups" 
-            allowfullscreen>
-          </iframe>
-          <h3>Surviving the Angel of Death</h3>
-        </div>
-
-        <div class="video-card">
-          <iframe 
-            width="560" height="315" 
-            src="https://www.youtube-nocookie.com/embed/DsNXCiVK5bs?si=_ZOZCPeYc4J2xAhN" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            sandbox="allow-scripts allow-same-origin allow-popups" 
-            allowfullscreen>
-          </iframe>
-          <h3>The UNBREAKABLE Rose</h3>
-        </div>
-
-        <div class="video-card">
-          <iframe 
-            width="560" height="315" 
-            src="https://www.youtube-nocookie.com/embed/XM1tpgQn1_k?si=dNatqln2igxhmKcr" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            sandbox="allow-scripts allow-same-origin allow-popups" 
-            allowfullscreen>
-          </iframe>
-          <h3>Not In This Alone</h3>
-        </div>
-
-        <div class="video-card">
-          <iframe 
-            width="560" height="315" 
-            src="https://www.youtube-nocookie.com/embed/QPQUNSj_8vc?si=FOc-73_CqbXkkB5c" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            sandbox="allow-scripts allow-same-origin allow-popups" 
-            allowfullscreen>
-          </iframe>
-          <h3>A Ladder from Heaven</h3>
-        </div>
-
+        <button class="scroll-btn-right-doc" aria-label="Scroll Right">&#10095;</button>
       </div>
-
-      <!-- ➡️ RIGHT SCROLL BUTTON -->
-      <button class="scroll-btn-right" aria-label="Scroll Right">&#10095;</button>
-
     </div>
-  </div>
-</section>
+  </section>
+  
+  <!-- 🎭 STORIES SECTION -->
+  <section id="stories">
+    <h2>Stories</h2>
+    <div class="story-gallery">
+      <div class="story-carousel-container">
+        <button class="scroll-btn-left-story" aria-label="Scroll Left">&#10094;</button>
+        <div class="story-carousel">
+          <div class="story-card">
+            <iframe src="https://www.youtube-nocookie.com/embed/qMyED3h42B0?si=pgToR7yWS4F3NGAp" allowfullscreen></iframe>
+            <h3>Surviving the Angel of Death</h3>
+          </div>
+          <div class="story-card">
+            <iframe src="https://www.youtube-nocookie.com/embed/DsNXCiVK5bs?si=_ZOZCPeYc4J2xAhN" allowfullscreen></iframe>
+            <h3>The UNBREAKABLE Rose</h3>
+          </div>
+          <div class="story-card">
+            <iframe src="https://www.youtube-nocookie.com/embed/XM1tpgQn1_k?si=dNatqln2igxhmKcr" allowfullscreen></iframe>
+            <h3>Not In This Alone</h3>
+          </div>
+          <div class="story-card">
+            <iframe src="https://www.youtube-nocookie.com/embed/QPQUNSj_8vc?si=FOc-73_CqbXkkB5c" allowfullscreen></iframe>
+            <h3>A Ladder from Heaven</h3>
+          </div>
+        </div>
+        <button class="scroll-btn-right-story" aria-label="Scroll Right">&#10095;</button>
+      </div>
+    </div>
+  </section>
+  
 
   
   
@@ -224,10 +201,10 @@ The Voice of Us features inspirational stories and content about Israel and the 
 
   <!-- <div class="video-card">
      <div class="video-thumbnail">
-                <img src="pictures/thumbnail.png" alt="Video Thumbnail" class="thumbnail">
-              </div>
+                <img src="thumbnail.png" alt="Video Thumbnail" class="thumbnail">
+        </div>
         <video controls poster="thumbnail1.jpg" onclick="goFullScreen(this)">
-          <source src="videos/Video.mp4" type="video/mp4" />
+          <source src="Video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <h3>Title</h3>
@@ -243,6 +220,7 @@ The Voice of Us features inspirational stories and content about Israel and the 
           <div class="short-film-carousel">
 
             <div class="video-card-small">
+                
               <video controls onclick="goFullScreen(this)" poster="spread-the-truth.jpg">
                 <source src="spread-the-truth.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -357,8 +335,15 @@ The Voice of Us features inspirational stories and content about Israel and the 
   <footer>
     Directed by Hillel Kornwasser | Designed by Noam Mayer | © 2025 Forces of Resilience
   </footer>
+
+  
+
+  <script>
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 0);
+    });
+  </script>
   
 </body>
-  <!-- onload="window.scrollTo(0, 0)" -->
 </html>
-
+<script src="script.js" defer></script>
