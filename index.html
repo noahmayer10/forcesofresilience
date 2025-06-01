@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Voice of Us</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
+
+<script>
     let currentFullscreenVideo = null;
   
     function goFullScreen(video) {
@@ -104,10 +105,15 @@
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
+        
         <li><a href="#documentaries">Documentaries</a></li>
+        
         <li><a href="#stories">Stories</a></li>
+        
         <li><a href="#short-films">Short Films</a></li>
+        
         <li><a href="#contact">Contact</a></li>
+
       </ul>
     </nav>
   </header>
@@ -125,7 +131,7 @@
     </div>
   </section>
 
-<!-- <div id="header-tag">Newest Video</div> -->
+
   
 
   
@@ -260,6 +266,20 @@ The Voice of Us features inspirational stories and content about Israel and the 
           </div>
         </div>
       </section>
+
+      <section id="photos" class="media-section">
+        <h2>Photos</h2>
+        <div class="media-grid">
+          <div class="media-item">
+            <img src="image1.jpeg" alt="Photo 1">
+          </div>
+          <div class="media-item">
+            <img src="image2.jpeg" alt="Photo 2">
+          </div>
+          <!-- Add more photos like this -->
+        </div>
+      </section>
+      
       
   
 
@@ -272,7 +292,7 @@ The Voice of Us features inspirational stories and content about Israel and the 
           <br>
           <a href="https://www.instagram.com/hillelkornwasser/" target="_blank">Instagram: @hillelkornwasser</a>
           <br>
-          <a href="https://chat.whatsapp.com/KERjabPBaWZ1xGvFMy7ZyK" target="_blank">WhatsApp Group Chat</a>
+          <a href="https://chat.whatsapp.com/GROUP_CHAT_LINK" target="_blank">WhatsApp Group Chat</a>
           <br>
           <a href="mailto:noam10mayer@gmail.com" target="_blank">Report an Issue</a>
         </div>
@@ -292,55 +312,55 @@ The Voice of Us features inspirational stories and content about Israel and the 
       </form>
       
       <script>
-  const form = document.getElementById("eventForm");
-  const status = document.getElementById("formStatus");
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const eventType = formData.get("eventType");
-    const eventDate = formData.get("eventDate");
-    const details = formData.get("details");
-
-    const waNumber = "16072029954"; // WhatsApp number (no + or dashes)
-    const message = `Hey! I'd like to book an event.%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AEvent: ${encodeURIComponent(eventType)}%0ADate: ${encodeURIComponent(eventDate)}%0ADetails: ${encodeURIComponent(details)}`;
-
-    // 🔍 Detect if on mobile
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    // 📲 Mobile app deep link vs 💻 web link
-    const waURL = isMobile
-      ? `whatsapp://send?phone=${waNumber}&text=${message}`
-      : `https://wa.me/${waNumber}?text=${message}`;
-
-    // 👋 Open WhatsApp first
-    window.open(waURL, "_blank");
-
-    // Then send form to Formspree
-    try {
-      const response = await fetch("https://formspree.io/f/mqaqjoed", {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: formData
-      });
-
-      if (response.ok) {
-        form.reset();
-        status.textContent = "Thanks! WhatsApp opened and form submitted.";
-        status.style.color = "green";
-      } else {
-        throw new Error();
-      }
-    } catch (error) {
-      status.textContent = "Oops! Something went wrong with the email.";
-      status.style.color = "red";
-    }
-  });
-</script>
-
+        const form = document.getElementById("eventForm");
+        const status = document.getElementById("formStatus");
+      
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+      
+          const formData = new FormData(form);
+          const name = formData.get("name");
+          const email = formData.get("email");
+          const eventType = formData.get("eventType");
+          const eventDate = formData.get("eventDate");
+          const details = formData.get("details");
+      
+          const waNumber = "16072029954"; // WhatsApp number (no + or dashes)
+          const message = `Hey! I'd like to book an event.%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AEvent: ${encodeURIComponent(eventType)}%0ADate: ${encodeURIComponent(eventDate)}%0ADetails: ${encodeURIComponent(details)}`;
+      
+          // 🔍 Detect if on mobile
+          const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      
+          // 📲 Mobile app deep link vs 💻 web link
+          const waURL = isMobile
+            ? `whatsapp://send?phone=${waNumber}&text=${message}`
+            : `https://wa.me/${waNumber}?text=${message}`;
+      
+          // 👋 Open WhatsApp first
+          window.open(waURL, "_blank");
+      
+          // Then send form to Formspree
+          try {
+            const response = await fetch("https://formspree.io/f/mqaqjoed", {
+              method: "POST",
+              headers: { Accept: "application/json" },
+              body: formData
+            });
+      
+            if (response.ok) {
+              form.reset();
+              status.textContent = "Thanks! WhatsApp opened and form submitted.";
+              status.style.color = "green";
+            } else {
+              throw new Error();
+            }
+          } catch (error) {
+            status.textContent = "Oops! Something went wrong with the email.";
+            status.style.color = "red";
+          }
+        });
+      </script>
+      
 
       
 
